@@ -1,2 +1,54 @@
 @import "tailwindcss";
 
+/* Adicione isso ao seu index.css */
+
+@keyframes blob-float-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 30px) scale(0.9);
+  }
+  75% {
+    transform: translate(25px, 15px) scale(1.05);
+  }
+}
+
+@keyframes blob-float-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-35px, 25px) scale(1.08);
+  }
+  50% {
+    transform: translate(25px, -30px) scale(0.92);
+  }
+  75% {
+    transform: translate(-20px, -15px) scale(1.03);
+  }
+}
+
+@keyframes blob-pulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.blob-1 {
+  animation: blob-float-1 var(--duration, 8s) ease-in-out infinite,
+             blob-pulse var(--pulse-duration, 4s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.blob-2 {
+  animation: blob-float-2 var(--duration, 10s) ease-in-out infinite,
+             blob-pulse var(--pulse-duration, 5s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
