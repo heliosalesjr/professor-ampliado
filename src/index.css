@@ -1,54 +1,78 @@
 @import "tailwindcss";
-
 /* Adicione isso ao seu index.css */
 
 @keyframes blob-float-1 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
+  0% {
+    transform: translate(0vw, 0vh) scale(1);
   }
   25% {
-    transform: translate(30px, -40px) scale(1.1);
+    transform: translate(15vw, -20vh) scale(1.2);
   }
   50% {
-    transform: translate(-20px, 30px) scale(0.9);
+    transform: translate(-10vw, 25vh) scale(0.8);
   }
   75% {
-    transform: translate(25px, 15px) scale(1.05);
+    transform: translate(20vw, 10vh) scale(1.1);
+  }
+  100% {
+    transform: translate(0vw, 0vh) scale(1);
   }
 }
 
 @keyframes blob-float-2 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
+  0% {
+    transform: translate(0vw, 0vh) scale(1);
   }
   25% {
-    transform: translate(-35px, 25px) scale(1.08);
+    transform: translate(-15vw, 20vh) scale(1.15);
   }
   50% {
-    transform: translate(25px, -30px) scale(0.92);
+    transform: translate(10vw, -25vh) scale(0.85);
   }
   75% {
-    transform: translate(-20px, -15px) scale(1.03);
+    transform: translate(-20vw, 15vh) scale(1.05);
+  }
+  100% {
+    transform: translate(0vw, 0vh) scale(1);
   }
 }
 
 @keyframes blob-pulse {
   0%, 100% {
-    opacity: 0.2;
+    opacity: 0.15;
   }
   50% {
     opacity: 0.35;
   }
 }
 
+@keyframes blob-morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 50% 60% 30% 60% / 30% 50% 70% 40%;
+  }
+  75% {
+    border-radius: 60% 40% 60% 40% / 70% 30% 50% 60%;
+  }
+}
+
 .blob-1 {
-  animation: blob-float-1 var(--duration, 8s) ease-in-out infinite,
-             blob-pulse var(--pulse-duration, 4s) ease-in-out infinite;
+  animation: 
+    blob-float-1 var(--duration, 12s) ease-in-out infinite,
+    blob-pulse var(--pulse-duration, 6s) ease-in-out infinite,
+    blob-morph var(--morph-duration, 8s) ease-in-out infinite;
   animation-delay: var(--delay, 0s);
 }
 
 .blob-2 {
-  animation: blob-float-2 var(--duration, 10s) ease-in-out infinite,
-             blob-pulse var(--pulse-duration, 5s) ease-in-out infinite;
-  animation-delay: var(--delay, 0s);
+  animation: 
+    blob-float-2 var(--duration, 15s) ease-in-out infinite,
+    blob-pulse var(--pulse-duration, 7s) ease-in-out infinite,
+    blob-morph var(--morph-duration, 10s) ease-in-out infinite;
+  animation-delay: var(--delay, 0.5s);
 }

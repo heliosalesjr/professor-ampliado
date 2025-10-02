@@ -12,19 +12,21 @@ const HeroSection = () => {
 
   // Gerar valores aleatórios no momento da renderização
   const blob1 = {
-    size: 300 + Math.random() * 250,
-    top: 10 + Math.random() * 60,
-    left: Math.random() * 40,
-    duration: 6 + Math.random() * 4,
-    pulseDuration: 3 + Math.random() * 2,
+    size: 350 + Math.random() * 250, // 350-600px
+    top: 10 + Math.random() * 70, // 10-80% - varia mais
+    left: Math.random() * 30, // 0-30% (lado esquerdo)
+    duration: 10 + Math.random() * 6, // 10-16s
+    pulseDuration: 5 + Math.random() * 3, // 5-8s
+    morphDuration: 7 + Math.random() * 4, // 7-11s
   };
 
   const blob2 = {
-    size: 350 + Math.random() * 300,
-    top: 20 + Math.random() * 60,
-    left: 50 + Math.random() * 40,
-    duration: 8 + Math.random() * 4,
-    pulseDuration: 4 + Math.random() * 2,
+    size: 400 + Math.random() * 300, // 400-700px
+    top: 20 + Math.random() * 70, // 20-90% - varia mais
+    left: 60 + Math.random() * 35, // 60-95% (lado direito)
+    duration: 12 + Math.random() * 6, // 12-18s
+    pulseDuration: 6 + Math.random() * 3, // 6-9s
+    morphDuration: 8 + Math.random() * 5, // 8-13s
     delay: 0.5,
   };
 
@@ -33,7 +35,7 @@ const HeroSection = () => {
       {/* Background Blobs */}
       <div className="absolute inset-0 overflow-hidden z-0">
         <div 
-          className="absolute bg-orange-500 rounded-full filter blur-3xl blob-1"
+          className="absolute bg-blue-500 rounded-full filter blur-3xl blob-1"
           style={{
             width: `${blob1.size}px`,
             height: `${blob1.size}px`,
@@ -41,11 +43,12 @@ const HeroSection = () => {
             left: `${blob1.left}%`,
             '--duration': `${blob1.duration}s`,
             '--pulse-duration': `${blob1.pulseDuration}s`,
+            '--morph-duration': `${blob1.morphDuration}s`,
             '--delay': '0s',
           }}
         />
         <div 
-          className="absolute bg-blue-500 rounded-full filter blur-3xl blob-2"
+          className="absolute bg-orange-500 rounded-full filter blur-3xl blob-2"
           style={{
             width: `${blob2.size}px`,
             height: `${blob2.size}px`,
@@ -53,6 +56,7 @@ const HeroSection = () => {
             left: `${blob2.left}%`,
             '--duration': `${blob2.duration}s`,
             '--pulse-duration': `${blob2.pulseDuration}s`,
+            '--morph-duration': `${blob2.morphDuration}s`,
             '--delay': `${blob2.delay}s`,
           }}
         />

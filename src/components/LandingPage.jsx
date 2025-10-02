@@ -248,7 +248,7 @@ const LandingPage = () => {
       {/* Footer */}
       <footer className="py-10 px-4 border-t border-gray-800">
         <div className="max-w-6xl mx-auto text-center text-gray-500">
-          <p>© 2024 O Professor Ampliado. Todos os direitos reservados.</p>
+          <p>© 2025 O Professor Ampliado. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>
