@@ -21,11 +21,11 @@ const LandingPage = () => {
 
       <Quote />
 
-      <Autores />
-
       <Media />
 
       <Convite />
+
+      <Autores />
     
       <Baixe />
       

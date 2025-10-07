@@ -80,7 +80,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-transparent bg-clip-text leading-tight">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-orange-500 to-blue-400 text-transparent bg-clip-text leading-tight">
                 O Professor Ampliado
               </h1>
             </motion.div>
@@ -89,7 +89,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed"
+              className="text-xl md:text-2xl text-slate-200 font-light leading-relaxed"
             >
               Reimaginando o Papel Docente na Era da IA
             </motion.p>
@@ -106,9 +106,9 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-lg text-gray-400 max-w-xl"
+              className="text-lg text-slate-300 max-w-xl"
             >
-              Um livro dos autores Rafael Parente, Renato Brito e Maria Cristina Mesquita.
+              Um livro dos autores <strong>Rafael Parente</strong>, <strong>Renato Brito</strong> e <strong>Maria Cristina Mesquita</strong>.
             </motion.p>
           </motion.div>
 
