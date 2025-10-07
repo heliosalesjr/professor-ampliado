@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { motion } from 'motion/react';
 
@@ -12,27 +13,28 @@ const HeroSection = () => {
 
   // Gerar valores aleatórios no momento da renderização
   const blob1 = {
-    size: 350 + Math.random() * 250, // 350-600px
-    top: 10 + Math.random() * 70, // 10-80% - varia mais
-    left: Math.random() * 30, // 0-30% (lado esquerdo)
-    duration: 10 + Math.random() * 6, // 10-16s
-    pulseDuration: 5 + Math.random() * 3, // 5-8s
-    morphDuration: 7 + Math.random() * 4, // 7-11s
+    size: 350 + Math.random() * 250,
+    top: 10 + Math.random() * 70,
+    left: Math.random() * 30,
+    duration: 10 + Math.random() * 6,
+    pulseDuration: 5 + Math.random() * 3,
+    morphDuration: 7 + Math.random() * 4,
   };
 
   const blob2 = {
-    size: 400 + Math.random() * 300, // 400-700px
-    top: 20 + Math.random() * 70, // 20-90% - varia mais
-    left: 60 + Math.random() * 35, // 60-95% (lado direito)
-    duration: 12 + Math.random() * 6, // 12-18s
-    pulseDuration: 6 + Math.random() * 3, // 6-9s
-    morphDuration: 8 + Math.random() * 5, // 8-13s
+    size: 400 + Math.random() * 300,
+    top: 20 + Math.random() * 70,
+    left: 60 + Math.random() * 35,
+    duration: 12 + Math.random() * 6,
+    pulseDuration: 6 + Math.random() * 3,
+    morphDuration: 8 + Math.random() * 5,
     delay: 0.5,
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
-      {/* Background Blobs */}
+      <div className='max-w-5xl mx-auto '>
+      
       <div className="absolute inset-0 overflow-hidden z-0">
         <div 
           className="absolute bg-blue-500 rounded-full filter blur-3xl blob-1"
@@ -63,41 +65,114 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 max-w-6xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-transparent bg-clip-text leading-tight">
-            O Professor Ampliado
-          </h1>
-        </motion.div>
-        
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-2xl md:text-3xl text-gray-300 mb-12 font-light"
-        >
-          Reimaginando o Papel Docente na Era da IA
-        </motion.p>
+      <div className="relative z-20 max-w-7xl mx-auto w-full">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Side - Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-left space-y-8"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-transparent bg-clip-text leading-tight">
+                O Professor Ampliado
+              </h1>
+            </motion.div>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed"
+            >
+              Reimaginando o Papel Docente na Era da IA
+            </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="inline-block"
-        >
-          <div className="h-1 w-32 bg-gradient-to-r from-orange-500 to-blue-500 mx-auto"></div>
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <div className="h-1 w-32 bg-gradient-to-r from-orange-500 to-blue-500"></div>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="text-lg text-gray-400 max-w-xl"
+            >
+              Um livro dos autores Rafael Parente, Renato Brito e Maria Cristina Mesquita.
+            </motion.p>
+          </motion.div>
+
+          {/* Right Side - Book Cover */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex justify-center md:justify-end"
+          >
+            <motion.div
+              whileHover={{ scale: 1.08, y: -10 }}
+              transition={{ duration: 0.4 }}
+              className="relative group cursor-pointer"
+            >
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-blue-500 rounded-2xl blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+              
+              {/* Book cover */}
+              <div className="relative">
+                <img 
+                  src="/capa_pa.png" 
+                  alt="Capa do livro O Professor Ampliado"
+                  className="w-full max-w-sm drop-shadow-2xl"
+                />
+              </div>
+
+              {/* Floating elements */}
+              <motion.div
+                className="absolute -top-4 -right-4 w-20 h-20 bg-orange-500/20 rounded-full blur-xl"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.5, 0.3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.div
+                className="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-500/20 rounded-full blur-xl"
+                animate={{
+                  scale: [1, 1.3, 1],
+                  opacity: [0.3, 0.5, 0.3],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
+              />
+            </motion.div>
+          </motion.div>
+
+        </div>
       </div>
 
       {/* Scroll Button */}
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
+        transition={{ delay: 1.2, duration: 1 }}
         onClick={scrollToNextSection}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer bg-transparent border-none hover:scale-110 transition-transform"
         whileHover={{ scale: 1.2 }}
@@ -116,6 +191,7 @@ const HeroSection = () => {
           </svg>
         </motion.div>
       </motion.button>
+      </div>
     </section>
   );
 };
